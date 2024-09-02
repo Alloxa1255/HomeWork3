@@ -14,24 +14,25 @@ namespace HomeWork3._3
             Console.WriteLine("Поиск простого числа");
             Console.Write("Введите ваше число ");
             int n = int.Parse(Console.ReadLine());
-            int i = 1;
-            bool simple;
+            int i = 2;
+            bool simple = true;
             while (i < n - 1)
             {
-
-                simple = Convert.ToBoolean( n % i);
+                if (n % i == 0)
+                { 
+                    simple = false;
+                    break;
+                }
                 i++;    
                 
-                Console.WriteLine(simple);
-                if (simple == false)
-                {
-                    Console.WriteLine("Ваше числе простое ");
-                }
-                else
-                {
-                    Console.WriteLine("Ваше число не простое ");
-                }
-                break;
+            }
+            if (simple)
+            {
+                Console.WriteLine("Ваше числе простое ");
+            }
+            else
+            {
+                Console.WriteLine("Ваше число не простое ");
             }
             Console.ReadLine();
         }
